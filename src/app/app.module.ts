@@ -14,6 +14,9 @@ import {  HttpClientModule } from '@angular/common/http';
 //material design
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
+import {MatInputModule} from '@angular/material/input';
+import {MatCardModule} from '@angular/material/card';
+import {MatSelectModule} from '@angular/material/select';
 import {MatTableModule} from '@angular/material/table';
 import { NewEntryComponent } from './new-entry/new-entry.component';
 
@@ -30,9 +33,10 @@ import {ReactiveFormsModule} from '@angular/forms';
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRouterModule,
     BrowserAnimationsModule, MatButtonModule, MatTableModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatInputModule,MatCardModule,MatSelectModule,
+    AppRouterModule,
   ],
   providers: [EntryService],
   bootstrap: [AppComponent]
