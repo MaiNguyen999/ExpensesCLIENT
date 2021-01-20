@@ -18,7 +18,6 @@ export class NewEntryComponent  {
     value: new FormControl('', [Validators.required, Validators.pattern('\\d+\\.?\\d*')])
   })
   onSubmit(){
-    console.log(this.entryForm.value);
     this.service.createEntry(this.entryForm.value).subscribe((data)=>console.log('Data-',data));
     this.router.navigate(['/']);
   }
