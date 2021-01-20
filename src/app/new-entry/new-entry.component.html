@@ -1,19 +1,19 @@
 <mat-card>
     <span>Create new entry</span>
-    <form [formGroup]="entryForm">
-        <mat-form-field>
+    <form [formGroup]="entryForm" (ngSubmit)="onSubmit()">
+        <mat-form-field class="new-entry-field" formControlName="description">
             <input matInput placeholder="Entry description">
         </mat-form-field>
-        <mat-form-field>
+        <mat-form-field class="new-entry-field" formControlName="isExpense">
             <mat-select placeholder="Entry type">
                 <mat-option *ngFor="let type of types" [value]="type.value">
                     {{type.display}}
                 </mat-option>
             </mat-select>
         </mat-form-field>
-        <mat-form-field>
+        <mat-form-field class="new-entry-field" formControlName="value"> 
             <input matInput placeholder="Entry value">
         </mat-form-field>
-        <button mat-raised-button>Create new</button>
+        <button mat-raised-button [disabled]="!entryForm.valid">Create new</button>
     </form>
 </mat-card>

@@ -11,7 +11,7 @@ import { EntryElement } from '../interfaces/EntryElement';
 export class EntriesComponent implements OnInit {
 
   displayedColumns: string[] = ['Description', 'IsExpense', 'Value'];
-  dataSource;
+  dataSource: any;
 
   constructor(private service:EntryService) { }
 

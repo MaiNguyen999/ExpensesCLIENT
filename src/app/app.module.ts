@@ -18,10 +18,12 @@ import {MatInputModule} from '@angular/material/input';
 import {MatCardModule} from '@angular/material/card';
 import {MatSelectModule} from '@angular/material/select';
 import {MatTableModule} from '@angular/material/table';
+import {MatToolbarModule} from '@angular/material/toolbar';
 import { NewEntryComponent } from './new-entry/new-entry.component';
 
 //forms
 import {ReactiveFormsModule} from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +35,7 @@ import {ReactiveFormsModule} from '@angular/forms';
   imports: [
     BrowserModule,
     HttpClientModule,
-    BrowserAnimationsModule, MatButtonModule, MatTableModule,
+    BrowserAnimationsModule, MatButtonModule, MatTableModule,MatToolbarModule,
     ReactiveFormsModule,
     MatInputModule,MatCardModule,MatSelectModule,
     AppRouterModule,
