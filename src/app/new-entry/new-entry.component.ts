@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import {Type} from '../interfaces/Type'
+import {EntryService} from '../entry.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-new-entry',
   templateUrl: './new-entry.component.html',
@@ -8,7 +10,7 @@ import {Type} from '../interfaces/Type'
 })
 export class NewEntryComponent  {
   types: Type[] = [{value:true, display:'Expense'},{value: false, display: 'Income'}];
-  constructor() { }
+  constructor(private service:EntryService, private router:Router) { }
 
   entryForm = new FormGroup({
     description: new FormControl('', Validators.required),
@@ -17,5 +19,7 @@ export class NewEntryComponent  {
   })
   onSubmit(){
     console.log(this.entryForm.value);
+    this.service.createEntry(this.entryForm.value).subscribe((data)=>console.log('Data-',data));
+    this.router.navigate(['/']);
   }
 }
